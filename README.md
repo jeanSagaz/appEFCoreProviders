@@ -18,7 +18,6 @@ To know more about how to setup your enviroment visit the [Microsoft .NET Downlo
 ## Technologies implemented:
 
 - ASP.NET Core 7.0 (with .NET Core 7.0) 
- - ASP.NET Identity Core
 - Entity Framework Core 7.0
 - .NET Core Native DI
 - Swagger UI
