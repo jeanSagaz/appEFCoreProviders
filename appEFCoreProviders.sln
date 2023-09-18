@@ -17,13 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Domain\Domain
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.Data", "src\Infra.Data\Infra.Data.csproj", "{394A5E49-6453-4DF8-A844-2C720BEBE88C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{90E8F99E-A8F7-41C6-B132-5DF74BF696A3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Applications", "3 - Applications", "{90E8F99E-A8F7-41C6-B132-5DF74BF696A3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "src\ConsoleApp\ConsoleApp.csproj", "{05B07567-EEE6-4FB7-ADFC-219B196539E2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "src\WebApp\WebApp.csproj", "{A859CE2E-8985-410B-AB3B-4BAE0FE8092E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Providers", "src\Core.Providers\Core.Providers.csproj", "{1A9D7CA1-BAEA-444C-A285-878B9A5BD8AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Providers", "src\Core.Providers\Core.Providers.csproj", "{1A9D7CA1-BAEA-444C-A285-878B9A5BD8AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

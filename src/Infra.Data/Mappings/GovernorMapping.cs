@@ -16,6 +16,9 @@ namespace Infra.Data.Mappings
                 .IsRequired()
                 .HasMaxLength(100)
                 .HasColumnName("Name");
+
+            builder.Property(c => c.StateId)
+                .IsRequired();
         }
     }
 }

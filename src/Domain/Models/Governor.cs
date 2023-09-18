@@ -19,11 +19,13 @@ namespace Domain.Models
 
         public Governor(string name,
             int age,
-            string politicalParty)
+            string politicalParty,
+            Guid stateId)
         {
             Name = name;
             Age = age;
             PoliticalParty = politicalParty;
+            StateId = stateId;
         }
     }
 }

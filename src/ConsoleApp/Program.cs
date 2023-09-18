@@ -1,8 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-using ConsoleApp.Configurations;
+﻿using ConsoleApp.Configurations;
 using Domain.Interfaces;
 using Domain.Models;
-using Infra.Data.Repository;
 using Microsoft.Extensions.DependencyInjection;
 
 class Program
@@ -10,6 +8,8 @@ class Program
     private static ICategoryRepository _categoryRepository;
     private static ICustomerRepository _customerRepository;
     private static IProductRepository _productRepository;
+    private static IStateRepository _stateRepository;
+    private static IGovernorRepository _governorRepository;
 
     static void Main(string[] args)
     {
@@ -27,11 +27,11 @@ class Program
         _productRepository.Add(xboxOne);
         _productRepository.Add(arcade);        
 
-        var jean = new Customer("Jean", "jeantf@gmail.com", DateTime.Now);        
+        var jean = new Customer("Fulano", "fulano@gmail.com", DateTime.Now);        
         jean.Products.Add(ps5);
         jean.Products.Add(arcade);
 
-        var candida = new Customer("Cândida", "candida@gmail.com", DateTime.Now);
+        var candida = new Customer("Ciclano", "ciclano@gmail.com", DateTime.Now);
         candida.Products.Add(xboxOne);
 
         _customerRepository.Add(jean);
@@ -64,6 +64,13 @@ class Program
         //      "Customers"
         //    }).Result;
 
+        var state = new State("Minas Gerais");
+        _stateRepository.Add(state);
+        var governor = new Governor("Fulano", 44, "Free", state.Id);
+        _governorRepository.Add(governor);
+        Commit(_stateRepository.UnitOfWork).Wait();
+        //Commit(_governorRepository.UnitOfWork).Wait();
+
         Console.WriteLine("Fim");
         Console.ReadKey();
     }
@@ -89,5 +96,7 @@ class Program
         _customerRepository = services.GetService<ICustomerRepository>();
         _productRepository = services.GetService<IProductRepository>();
         _categoryRepository = services.GetService<ICategoryRepository>();
+        _stateRepository = services.GetService<IStateRepository>();
+        _governorRepository = services.GetService<IGovernorRepository>();
     }
 }
