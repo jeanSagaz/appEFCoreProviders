@@ -12,6 +12,8 @@ namespace WebApp.Extensions
             services.AddRouting(options => options.LowercaseUrls = true);
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IStateRepository, StateRepository>();
+            services.AddTransient<IGovernorRepository, GovernorRepository>();
         }
     }
 }

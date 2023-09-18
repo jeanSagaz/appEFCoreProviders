@@ -5,9 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using System.Data.SqlTypes;
-using static ConsoleApp.Configurations.Provider;
 
 namespace ConsoleApp.Configurations
 {
@@ -34,6 +31,8 @@ namespace ConsoleApp.Configurations
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IStateRepository, StateRepository>();
+            services.AddTransient<IGovernorRepository, GovernorRepository>();
 
             var serviceProvider = new ServiceCollection()
                             .AddLogging(builder =>
@@ -43,6 +42,7 @@ namespace ConsoleApp.Configurations
                                 //builder.AddDebug();
                             })
                             .BuildServiceProvider();
+
             ILogger<DataContext> logger = serviceProvider.GetService<ILogger<DataContext>>();            
 
             services.AddScoped<DataContext>(options =>

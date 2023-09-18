@@ -21,7 +21,6 @@ namespace Domain.Models
             Name = name;
             Email = email;
             BirthDate = birthDate;
-        }
-        
+        }        
     }
 }

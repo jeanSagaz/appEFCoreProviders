@@ -23,6 +23,8 @@ namespace Infra.Data.Context
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<State> States { get; set; }
+        public DbSet<Governor> Governors { get; set; }
 
         public async Task<bool> Commit()
         {
@@ -96,6 +98,8 @@ namespace Infra.Data.Context
             modelBuilder.ApplyConfiguration(new CustomerMapping());
             modelBuilder.ApplyConfiguration(new ProductMapping());
             modelBuilder.ApplyConfiguration(new CategoryMapping());
+            modelBuilder.ApplyConfiguration(new StateMapping());
+            modelBuilder.ApplyConfiguration(new GovernorMapping());
 
             base.OnModelCreating(modelBuilder);
         }
